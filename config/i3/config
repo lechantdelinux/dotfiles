@@ -188,6 +188,7 @@ bindsym $mod+r mode "resize"
 
 ##############################################################################
 # Colors
+# These come from https://github.com/equinusocio/material-theme#color-schemes-palettes
 ##############################################################################
 set $color0  #0a0a0a
 set $color1  #ff5370
@@ -208,10 +209,10 @@ set $color15  #eeeeec
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $color13            $color13          $color15          $color14
-client.unfocused        $color0 	    $color0	      $color7 		$color14
-client.focused_inactive $color0		    $color0	      $color7	        $color14
-client.urgent           $color9		    $color9	      $color15          $color14
+client.focused          $color14        $color14      $color15          $color10
+client.unfocused        $color0 	    $color0	      $color7 	    	$color14
+client.focused_inactive $color0		    $color0	      $color7	        $color10
+client.urgent           $color9		    $color9	      $color15          $color10
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -222,7 +223,7 @@ bar {
 		background $color0
 	    	separator $color7
 		#                  border             background         text
-		focused_workspace  $color13          $color13          $color15
+		focused_workspace  $color14          $color14          $color15
 		inactive_workspace $color0	     $color8	       $color7
 		urgent_workspace   $color9	     $color9	       $color15
 	}

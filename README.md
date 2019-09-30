@@ -10,4 +10,8 @@
 
 ## Aside from that...
 
+The colors I use come from [here](https://github.com/equinusocio/material-theme#color-schemes-palettes).
+
+The blocks in config/i3blocks come from [here](https://github.com/vivien/i3blocks-contrib). 
+
 The wallpaper is [this](https://pixabay.com/vectors/dark-darkness-meteor-night-2024127/).
