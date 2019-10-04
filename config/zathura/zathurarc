@@ -3,4 +3,4 @@ set selection-clipboard clipboard
 
 # invert colors
 set recolor "true"
-set recolor-heephue "true"
+set recolor-keephue "true"

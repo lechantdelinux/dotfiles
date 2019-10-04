@@ -89,3 +89,27 @@ set whichwrap=b,s,<,>,[,]
 
 let mapleader=','
 let maplocalleader=','
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Experimental ==> might not work...
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Synctex
+" comes from https://gist.github.com/vext01/16df5bd48019d451e078
+function! Synctex()
+        " remove 'silent' for debugging
+        execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
+endfunction
+map <C-enter> :call Synctex()<cr>
+
+function TeXCompile()
+    w
+    execute "silent !lualatex -synctex=1 " . @%
+    redraw!
+endfunction
+" ... saves and produces a pdf
+
+function Vimura()
+    execute "silent !vimura " . expand('%:r') . ".pdf &"
+endfunction
+" ... opens said pdf

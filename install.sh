@@ -8,8 +8,8 @@
 
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="vimrc config/i3/config config/i3blocks config/i3status/config config/ranger/rc.conf config/rofi/diy.rasi config/termite/config wallpapers"    # list of files/folders to symlink in homedir
-dirs="config/i3 config/i3status config/ranger config/rofi config/termite"    # list of directories to create
+files="bin/vim bin/vimura config/i3/config config/i3blocks config/i3status/config config/ranger/rc.conf config/rofi/diy.rasi config/termite/config config/zathura/zathurarc vimrc wallpapers"    # list of files/folders to symlink in homedir
+dirs="bin config/i3 config/i3status config/ranger config/rofi config/termite config/zathura"    # list of directories to create
 
 ##########
 
