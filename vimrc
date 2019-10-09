@@ -90,6 +90,13 @@ set whichwrap=b,s,<,>,[,]
 let mapleader=','
 let maplocalleader=','
 
+" Mostly for internal terminal
+" cd to the directory that contains the file being edited
+autocmd BufEnter * silent! lcd %:p:h
+" When splitting vertically, e.g. for the internal terminal,
+" put the new buffer at the bottom
+set splitbelow
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental ==> might not work...
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,18 +105,19 @@ let maplocalleader=','
 " comes from https://gist.github.com/vext01/16df5bd48019d451e078
 function! Synctex()
         " remove 'silent' for debugging
-        execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
+        execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . bufname('%')[:-5]. ".pdf &"
+        redraw!
 endfunction
 map <C-enter> :call Synctex()<cr>
+" ... opens pdf and highlights current line
+" problems with synctex though
 
 function TeXCompile()
     w
-    execute "silent !lualatex -synctex=1 " . @%
+    execute "silent !lualatex -synctex=1 -interaction=nonstopmode " . @%
     redraw!
 endfunction
 " ... saves and produces a pdf
 
-function Vimura()
-    execute "silent !vimura " . expand('%:r') . ".pdf &"
-endfunction
-" ... opens said pdf
+" use correct filetype for LaTeX
+let g:tex_flavor='latex'
