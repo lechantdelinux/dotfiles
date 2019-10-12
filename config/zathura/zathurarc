@@ -4,3 +4,7 @@ set selection-clipboard clipboard
 # invert colors
 set recolor "true"
 set recolor-keephue "true"
+
+# synctex
+set synctex "true"
+set synctex-editor-command "/usr/bin/vim --servername vim --remote +%{line} %{input}"
