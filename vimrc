@@ -100,6 +100,10 @@ set splitbelow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental ==> might not work...
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocompletion
+"setlocal omnifunc=syntaxcomplete#Complete
+"set complete+=k
+"set omnifunc
 
 " Synctex
 " comes from https://gist.github.com/vext01/16df5bd48019d451e078
@@ -119,3 +123,9 @@ map <leader><enter> :call TeXCompile()<cr>
 
 " use correct filetype for LaTeX
 let g:tex_flavor='latex'
+
+function Biber()
+    execute "silent !biber " . expand('%:r')
+    redraw!
+endfunction
+map <leader>b :call Biber()<cr>
