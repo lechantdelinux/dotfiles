@@ -5,6 +5,9 @@
  *
  * User: Tomaszal
  * Copyright: Tomas Zaluckij
+ * 
+ * Original is https://github.com/davatorium/rofi-themes/blob/master/User%20Themes/material.rasi
+ * Modified by Florian Beau, a.k.a. lechantdelinux
  */
 
 * {
@@ -30,7 +33,7 @@
 	spacing: 0;
 	background-color: transparent;
 
-	font: "Roboto Mono 13";
+	font: "System San Francisco Display 13";
 }
 
 window {

@@ -129,3 +129,13 @@ function Biber()
     redraw!
 endfunction
 map <leader>b :call Biber()<cr>
+
+function LilyPond()
+    w
+    execute "silent !lilypond " . expand('%:p')
+    redraw!
+endfunction
+
+function OpenPDF()
+    execute "silent !zathura " . expand('%:r') . ".pdf &"
+endfunction
