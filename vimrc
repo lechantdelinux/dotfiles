@@ -149,4 +149,4 @@ function Compile()
         call LilyPond()
     endif
 endfunction
-map <leader><enter> :call TeXCompile()<cr>
+map <leader><enter> :call Compile()<cr>
