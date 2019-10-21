@@ -111,15 +111,12 @@ function! Synctex()
         execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . bufname('%')[:-5]. ".pdf &"
         redraw!
 endfunction
-map <leader><space> :call Synctex()<cr>
 
 function TeXCompile()
     w
     execute "silent !lualatex -synctex=1 -interaction=nonstopmode " . @%
     redraw!
-    call Synctex()
 endfunction
-map <leader><enter> :call TeXCompile()<cr>
 
 " use correct filetype for LaTeX
 let g:tex_flavor='latex'
@@ -137,5 +134,19 @@ function LilyPond()
 endfunction
 
 function OpenPDF()
-    execute "silent !zathura " . expand('%:r') . ".pdf &"
+    if &filetype == 'tex'
+        call Synctex()
+    else
+        execute "silent !zathura " . expand('%:r') . ".pdf &"
+    endif
 endfunction
+map <leader><space> :call OpenPDF()<cr>
+
+function Compile()
+    if &filetype == 'tex'
+        call TeXCompile()
+    elseif &filetype == 'lilypond'
+        call LilyPond()
+    endif
+endfunction
+map <leader><enter> :call TeXCompile()<cr>
