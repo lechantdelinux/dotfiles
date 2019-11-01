@@ -98,55 +98,66 @@ autocmd BufEnter * silent! lcd %:p:h
 set splitbelow
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Experimental ==> might not work...
+" Writing text and music
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocompletion
-"setlocal omnifunc=syntaxcomplete#Complete
-"set complete+=k
-"set omnifunc
 
 " Synctex
 " comes from https://gist.github.com/vext01/16df5bd48019d451e078
 function! Synctex()
-        execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . bufname('%')[:-5]. ".pdf &"
-        redraw!
+    execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . bufname('%')[:-5]. ".pdf &"
+    redraw!
 endfunction
 
 function TeXCompile()
-    w
-    execute "silent !lualatex -synctex=1 -interaction=nonstopmode " . @%
-    redraw!
+w
+execute "silent !lualatex -synctex=1 -interaction=nonstopmode " . @%
+redraw!
 endfunction
 
 " use correct filetype for LaTeX
 let g:tex_flavor='latex'
 
 function Biber()
-    execute "silent !biber " . expand('%:r')
-    redraw!
+execute "silent !biber " . expand('%:r')
+redraw!
 endfunction
 map <leader>b :call Biber()<cr>
 
 function LilyPond()
-    w
-    execute "silent !lilypond " . expand('%:p')
-    redraw!
+w
+execute "silent !lilypond " . expand('%:p')
+redraw!
 endfunction
 
 function OpenPDF()
-    if &filetype == 'tex'
-        call Synctex()
-    else
-        execute "silent !zathura " . expand('%:r') . ".pdf &"
-    endif
+if &filetype == 'tex'
+    call Synctex()
+else
+    execute "silent !zathura " . expand('%:r') . ".pdf &"
+endif
 endfunction
 map <leader><space> :call OpenPDF()<cr>
 
 function Compile()
-    if &filetype == 'tex'
-        call TeXCompile()
-    elseif &filetype == 'lilypond'
-        call LilyPond()
-    endif
+if &filetype == 'tex'
+    call TeXCompile()
+elseif &filetype == 'lilypond'
+    call LilyPond()
+endif
 endfunction
 map <leader><enter> :call Compile()<cr>
+
+" Smart quotes for LaTeX
+" Comes from https://github.com/vim-scripts/auctex.vim/blob/master/ftplugin/auctex.vim
+function! s:TexQuotes()
+let insert = "''"
+let left = getline('.')[col('.')-2]
+if left =~ '^\(\|\s\)$'
+let insert = '``'
+elseif left == '\'
+let insert = '"'
+endif
+return insert
+endfunction
+
+autocmd FileType tex inoremap <buffer> " <C-R>=<SID>TexQuotes()<CR>''<Esc>hi
