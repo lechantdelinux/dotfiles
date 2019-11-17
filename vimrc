@@ -50,6 +50,9 @@ Plugin 'cohama/lexima.vim'
 " Auto close HTML tags
 Plugin 'alvan/vim-closetag'
 
+" ǸERDTree
+Plugin 'scrooloose/nerdtree'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End of my plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -96,6 +99,9 @@ autocmd BufEnter * silent! lcd %:p:h
 " When splitting vertically, e.g. for the internal terminal,
 " put the new buffer at the bottom
 set splitbelow
+
+" Toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Writing text and music
