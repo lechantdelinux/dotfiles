@@ -40,9 +40,8 @@ Plugin 'VundleVim/Vundle.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Auto completion
-" Install, then:
-" cd ~/.vim/bundle/YouCompleteMe
-" ./install.py --all
+" The install script is apparently deprecated.
+" Follow the instructions on https://github.com/ycm-core/YouCompleteMe instead.
 Plugin 'Valloric/YouCompleteMe'
 
 " Auto close misc. delimiters
@@ -102,6 +101,8 @@ set splitbelow
 
 " Toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
+" Close NERDTree when last buffer is closed
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Writing text and music
@@ -167,3 +168,8 @@ return insert
 endfunction
 
 autocmd FileType tex inoremap <buffer> " <C-R>=<SID>TexQuotes()<CR>''<Esc>hi
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" /!\ Experimental
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
