@@ -85,6 +85,8 @@ set tabstop=4
 set shiftwidth=4
 " on pressing tab insert 4 spaces
 set expandtab
+" override LilyPond's default 2 space indent
+autocmd Filetype lilypond setlocal ts=4 sw=4 expandtab
 
 " go to pervious/next line with left/right arrow keys
 set whichwrap=b,s,<,>,[,]
@@ -102,6 +104,7 @@ set splitbelow
 " Toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 " Close NERDTree when last buffer is closed
+" This comes from https://github.com/scrooloose/nerdtree/issues/21#issuecomment-157212312
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
