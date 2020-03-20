@@ -253,3 +253,6 @@ exec --no-startup-id caffeine -a
 
 # nice lighting
 exec --no-startup-id fluxgui
+
+#conky
+exec --no-startup-id conky
