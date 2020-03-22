@@ -237,7 +237,7 @@ bar {
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # sound
-exec --no-startup-id start-pulseaudio-x11 ; /usr/bin/jackd -d alsa -d hw:1 -r 44100 -p 1024 -n 2 ; killall pulseaudio
+exec --no-startup-id start-pulseaudio-x11 ; /usr/bin/jackd -d alsa -d hw:1 -r 44100 -p 1024 -n 2 ; wait ; killall pulseaudio
 
 # compositor
 exec --no-startup-id compton
