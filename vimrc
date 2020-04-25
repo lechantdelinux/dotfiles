@@ -42,7 +42,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Auto completion
 " The install script is apparently deprecated.
 " Follow the instructions on https://github.com/ycm-core/YouCompleteMe instead.
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 
 " Auto close misc. delimiters
 Plugin 'cohama/lexima.vim'
@@ -113,10 +113,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Synctex
 " comes from https://gist.github.com/vext01/16df5bd48019d451e078
+" Ctrl + Click in Zathura goes to source in Vim
 function! Synctex()
     execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . bufname('%')[:-5]. ".pdf &"
     redraw!
 endfunction
+" map <C-enter> :call Synctex()<cr>
+" ... not working
 
 function TeXCompile()
 w
