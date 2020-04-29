@@ -114,12 +114,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Synctex
 " comes from https://gist.github.com/vext01/16df5bd48019d451e078
 " Ctrl + Click in Zathura goes to source in Vim
+" This function is called by OpenPDF() if the filetype is 'tex', therefore:
+" <leader><space>
 function! Synctex()
     execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . bufname('%')[:-5]. ".pdf &"
     redraw!
 endfunction
-" map <C-enter> :call Synctex()<cr>
-" ... not working
 
 function TeXCompile()
 w
