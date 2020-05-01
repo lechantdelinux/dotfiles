@@ -123,7 +123,7 @@ endfunction
 
 function TeXCompile()
 w
-execute "silent !lualatex -synctex=1 -interaction=nonstopmode " . @%
+execute "silent !lualatex -synctex=1 -interaction=nonstopmode -shell-escape " . @%
 redraw!
 endfunction
 
