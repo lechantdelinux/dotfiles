@@ -14,9 +14,6 @@ set synctex-editor-command "/usr/bin/vim --servername vim --remote +%{line} %{in
 set zoom-step 20
 set scroll-step 80
 
-# copy selection to system clipboard
-set selection-clipboard clipboard
-
 # enable incremental search
 set incremental-search true
 
