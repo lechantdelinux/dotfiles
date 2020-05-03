@@ -8,3 +8,18 @@ set recolor-keephue "true"
 # synctex
 set synctex "true"
 set synctex-editor-command "/usr/bin/vim --servername vim --remote +%{line} %{input}"
+
+# The following comes from http://jhshi.me/2016/03/09/zathura-pdf-viewer-for-vim-lovers/index.html
+# zoom and scroll step size
+set zoom-step 20
+set scroll-step 80
+
+# copy selection to system clipboard
+set selection-clipboard clipboard
+
+# enable incremental search
+set incremental-search true
+
+# zoom
+map <C-i> zoom in
+map <C-o> zoom out
