@@ -101,6 +101,8 @@ autocmd BufEnter * silent! lcd %:p:h
 " put the new buffer at the bottom
 set splitbelow
 
+map <leader>t :terminal<cr>
+
 " Toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 " Close NERDTree when last buffer is closed
@@ -178,4 +180,3 @@ autocmd FileType tex inoremap <buffer> " <C-R>=<SID>TexQuotes()<CR>''<Esc>hi
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " /!\ Experimental
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
