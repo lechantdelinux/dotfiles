@@ -47,6 +47,9 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Eject CD
+bindsym XF86Eject exec eject /dev/sr0
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
