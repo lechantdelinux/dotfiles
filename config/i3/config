@@ -245,6 +245,9 @@ exec --no-startup-id start-pulseaudio-x11 ; /usr/bin/jackd -d alsa -d hw:1 -r 44
 # compositor
 exec --no-startup-id compton
 
+# another sound applet for apps that bypass pulseaudio/JACK
+exec --no-startup-id alsa-tray
+
 # sound applet
 exec --no-startup-id pasystray
 
