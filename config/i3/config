@@ -230,6 +230,7 @@ bar {
 		inactive_workspace $color0	     $color8	       $color7
 		urgent_workspace   $color9	     $color9	       $color15
 	}
+    tray_output primary
 }
 
 ##############################################################################
