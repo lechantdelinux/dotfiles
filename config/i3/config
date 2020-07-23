@@ -155,6 +155,16 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# more workspaces for more monitors
+set $control "Control"
+bindsym $mod+numbersign workspace $control
+bindsym $mod+Shift+numbersign move container to workspace $control
+workspace $control output DisplayPort-1
+set $tablet "Tablet"
+bindsym $mod+Tab workspace $tablet
+bindsym $mod+Shift+Tab move container to workspace $tablet
+workspace $tablet output HDMI-A-0
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -263,3 +273,6 @@ exec --no-startup-id fluxgui
 
 #conky
 exec --no-startup-id conky
+
+# extra conky for extra monitor
+exec --no-startup-id conky -c $HOME/.config/conky/extraconky.conf
