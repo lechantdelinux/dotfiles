@@ -178,7 +178,7 @@ endfunction
 autocmd FileType tex inoremap <buffer> " <C-R>=<SID>TexQuotes()<CR>''<Esc>hi
 
 " Smart French quotes for LaTeX
-autocmd FileType tex inoremap « inoremap « <Bslash>og<Space><Space><Bslash>fg{}<Left><Left><Left><Left><Left><Left>
+autocmd FileType tex inoremap « <Bslash>og<Space><Bslash>fg{}<Left><Left><Left><Left><Left>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " /!\ Experimental
