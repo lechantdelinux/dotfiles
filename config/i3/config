@@ -272,6 +272,7 @@ exec --no-startup-id feh --bg-scale ~/.dotfiles/wallpapers/shootingstar.png
 
 # caffeine
 exec --no-startup-id caffeine -a
+exec --no-startup-id xfce4-power-manager
 
 # nice lighting
 exec --no-startup-id fluxgui
