@@ -77,6 +77,8 @@ filetype plugin indent on    " required
 
 syntax on
 set mouse=a
+" mouse in alacritty
+set ttymouse=sgr
 set number
 
 " show existing tab with 4 spaces width
