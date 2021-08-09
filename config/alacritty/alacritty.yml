@@ -102,7 +102,7 @@
   #multiplier: 3
 
 # Font configuration
-#font:
+font:
   # Normal (roman) font face
   #normal:
     # Font family
@@ -150,7 +150,8 @@
     #style: Bold Italic
 
   # Point size
-  #size: 11.0
+  size: 11.0
+  #size: 9.0 # for smaller screens
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -270,22 +271,22 @@ colors:
   normal:
     black:   '#0a0a0a'
     red:     '#ff5370'
-    green:   '#c3e88d'
+    green:   '#f78c6c' # actually orange
     yellow:  '#ffcb6c'
-    blue:    '#82aaff'
-    magenta: '#bb80b3'
-    cyan:    '#f78c6c'
+    blue:    '#c3e88d' # actually green
+    magenta: '#82aaff' # actually blue
+    cyan:    '#bb80b3' # actually purple
     white:   '#babdb9'
 
   # Bright colors
   bright:
     black:   '#555753'
     red:     '#e53935'
-    green:   '#91b859'
+    green:   '#f76d47' # actually orange
     yellow:  '#ffbc2c'
-    blue:    '#6182b8'
-    magenta: '#945eb8'
-    cyan:    '#f76d47'
+    blue:    '#91b859' # actually green
+    magenta: '#6182b8' # actually blue
+    cyan:    '#945eb8' # actually purple
     white:   '#eeeeec'
 
   # Dim colors
