@@ -11,22 +11,22 @@
  */
 
 * {
-	base00: #263238;
-	base01: #2E3C43;
-	base02: #314549;
-	base03: #546E7A;
-	base04: #B2CCD6;
-	base05: #EEFFFF;
-	base06: #EEFFFF;
-	base07: #FFFFFF;
-	base08: #F07178;
-	base09: #F78C6C;
-	base0A: #FFCB6B;
-	base0B: #C3E88D;
-	base0C: #89DDFF;
-	base0D: #82AAFF;
-	base0E: #C792EA;
-	base0F: #FF5370;
+	base00: #263238; /* very, very dark gray */
+	base01: #2E3C43; /* very dark gray */
+	base02: #314549; /* dark gray */
+	base03: #546E7A; /* gray */
+	base04: #B2CCD6; /* light gray */
+	base05: #EEFFFF; /* very light gray */
+	base06: #EEFFFF; /* very light gray */
+	base07: #FFFFFF; /* white */
+	base08: #F07178; /* pink */
+	base09: #F78C6C; /* orange */
+	base0A: #FFCB6B; /* yellow */
+	base0B: #C3E88D; /* green */
+	base0C: #89DDFF; /* cyan */
+	base0D: #82AAFF; /* blue */
+	base0E: #C792EA; /* purple */
+	base0F: #FF5370; /* red */
 
 	/*base0D: #00BCD4;*/
 
@@ -118,7 +118,7 @@ element selected {
 }
 
 element alternate {
-	/*background-color: @base03;*/
+    /*background-color: @base03;*/
 }
 
 element normal normal, element selected normal, element alternate normal {
@@ -131,6 +131,15 @@ element normal urgent, element selected urgent, element alternate urgent {
 
 element normal active, element selected active, element alternate active {
 	text-color: @base0B;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element-icon {
+    background-color: inherit;
 }
 
 /*************************************************************************/
