@@ -52,6 +52,11 @@ Plugin 'alvan/vim-closetag'
 " ǸERDTree
 Plugin 'scrooloose/nerdtree'
 
+" ReactJS
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End of my plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -181,6 +186,9 @@ autocmd FileType tex inoremap <buffer> " <C-R>=<SID>TexQuotes()<CR>''<Esc>hi
 
 " Smart French quotes for LaTeX
 autocmd FileType tex inoremap « <Bslash>og<Space><Bslash>fg{}<Left><Left><Left><Left><Left>
+
+" ReactJS
+let g:jsx_ext_required = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " /!\ Experimental
