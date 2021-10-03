@@ -85,6 +85,7 @@ set mouse=a
 " mouse in alacritty
 set ttymouse=sgr
 set number
+set encoding=utf8 " required for YouCompleteMe
 
 " show existing tab with 4 spaces width
 set tabstop=4
