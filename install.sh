@@ -8,7 +8,7 @@
 
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="bin/vim bin/vimura config/i3/config config/i3blocks config/i3status/config config/neofetch/arch_6colors.txt config/neofetch/config.conf config/ranger/rc.conf config/rofi/diy.rasi config/termite/config config/zathura/zathurarc vimrc wallpapers config/conky/conky.conf bashrc vim/indent/tex.vim config/alacritty/alacritty.yml"    # list of files/folders to symlink in homedir
+files="bin/vim bin/vimura config/i3/config config/i3blocks config/i3status/config config/neofetch/arch_6colors.txt config/neofetch/config.conf config/ranger/rc.conf config/rofi/config.rasi config/rofi/diy.rasi config/termite/config config/zathura/zathurarc vimrc wallpapers config/conky/conky.conf bashrc vim/indent/tex.vim config/alacritty/alacritty.yml"    # list of files/folders to symlink in homedir
 dirs="bin config/i3 config/i3status config/neofetch config/ranger config/rofi config/termite config/zathura config/conky vim/indent config/alacritty"    # list of directories to create
 
 ##########
