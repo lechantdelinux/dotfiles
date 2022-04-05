@@ -52,6 +52,9 @@ Plugin 'alvan/vim-closetag'
 " ǸERDTree
 Plugin 'scrooloose/nerdtree'
 
+" JS
+Plugin 'jason0x43/vim-js-indent'
+
 " ReactJS
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
